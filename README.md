@@ -1,5 +1,7 @@
 # MEOW Forensics Toolkit 🐱
 
+<img src="https://github.com/simon-im-security/MEOW-Forensics-Toolkit/blob/main/Images/meow_ft_logo.png?raw=true" width="50%" />
+
 **Mystery Event Origin Workflow (MEOW)** is a set of forensic scripts designed for macOS systems to facilitate detailed system analysis, event tracing, and forensic data capture. The toolkit assists in uncovering and understanding mysterious or suspicious events occurring within macOS environments.
 
 ```
@@ -62,20 +64,6 @@
 ## Quick Start
 
 To download, visit: [MEOW Forensics Toolkit Releases](https://github.com/simon-im-security/MEOW-Forensics-Toolkit/releases/tag/main)
-
-Clone and prepare the toolkit:
-
-```bash
-git clone https://github.com/your-username/meow-forensics-toolkit.git
-cd meow-forensics-toolkit
-chmod +x */*.sh
-```
-
-Execute a module (example - System Overview):
-
-```bash
-sudo ./phase-1_volatile-capture-fast/01_system-overview.sh
-```
 
 All scripts must run with root privileges.
 
