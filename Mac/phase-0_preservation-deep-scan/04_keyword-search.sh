@@ -45,7 +45,6 @@ echo "Keywords pattern: $PATTERN"
 # ------------------------------------------------------------
 # SELECT SEARCH LOCATION
 # ------------------------------------------------------------
-echo
 echo "Choose where to search:"
 echo "  1) Entire system (/)"
 echo "  2) Specific folder (recursive)"
