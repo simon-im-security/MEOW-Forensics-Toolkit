@@ -1,10 +1,10 @@
 # MEOW Forensics Toolkit
 
 <div align="center">
-  <img src="https://github.com/simon-im-security/MEOW-Forensics-Toolkit/blob/main/Images/meow_ft_logo.png?raw=true" width="50%" />
+  <img src="https://github.com/simon-im-security/MEOW-Forensics-Toolkit/blob/main/Images/meow_ft_logo.png?raw=true" width="50%">
 </div>
 
-**Mystery Event Origin Workflow (MEOW)** is a set of digital forensics and incident response (DFIR) scripts designed for macOS systems to facilitate detailed system analysis, event tracing, and forensic data capture. The toolkit assists in uncovering and understanding mysterious or suspicious events occurring within macOS environments.
+**MEOW** stands for **Mystery Event Origin Workflow** — a collection of forensics and incident response (DFIR) scripts built for macOS. It helps you figure out what's going on when your system acts strangely or something suspicious is happening.
 
 ```
  /\_/\  
@@ -12,86 +12,77 @@
  > ^ <  
 ```
 
-## Toolkit Modules
-
-### Phase 0: Preservation & Deep Scan
-
-1. **Disk Copy (`01_disk-copy.sh`)**
-   - Creates full or partial system backups using `ditto`, then compresses and archives and hashes.
-   - **Output:** Complete filesystem snapshots, hashed archives, and detailed logs of copied items.
-
-2. **Log Backup (`02_log-backup.sh`)**
-   - Collects macOS system, global, and user logs; archives output.
-   - **Output:** Comprehensive set of logs, including system and user logs, stored in a structured archive.
-
-3. **File Timeline (`03_file-timeline.sh`)**
-   - Identifies recently modified files; filters by minutes or days.
-   - **Output:** Timestamped list of recently modified files, ideal for tracking suspicious file activities.
-
-4. **Keyword Search (`04_keyword-search.sh`)**
-   - Searches text files for suspicious keywords across the system.
-   - **Output:** Consolidated match reports indicating file paths, matched keywords, and file hashes.
+Whether you're preserving evidence, monitoring processes, or analysing after an incident — MEOW has you covered.
 
 ---
 
-### Phase 1: Volatile Capture (Live System Data)
+## 💾 Phase 0: Preservation & Deep Scan
 
-1. **System Overview (`01_system-overview.sh`)**
-   - Captures SIP status, persistence artefacts, cron jobs, processes, and system resources.
-   - **Output:** Detailed snapshot of system state, including running processes, network state, and persistent configurations.
+1. **Disk Copy**  
+   Backs up the entire system (or parts of it), compresses and hashes everything for integrity.
 
-2. **Network Snapshot (`02_network-snapshot.sh`)**
-   - Records network configurations and active network states without capturing live traffic.
-   - **Output:** Network interfaces, connections, routes, DNS configurations, and open port details.
+2. **Log Backup**  
+   Grabs system and user logs, then neatly archives them.
 
-3. **CPU Dump (`03_cpu-dump.sh`)**
-   - Collects detailed CPU usage, sysctl data, and CPU features; excludes thermal/power metrics to prevent system freezes.
-   - **Output:** CPU usage statistics, CPU feature flags, microcode version, and cache information.
+3. **File Timeline**  
+   Lists files that were modified recently — great for spotting unusual changes.
 
----
-
-### Phase 2: Runtime Monitoring
-
-1. **Process Tracker (`01_process-tracker.sh`)**
-   - Monitors and logs process launches in real-time using DTrace; provides process lists and failure tracking.
-   - **Output:** Real-time logs of executed and failed processes, along with process lists before and after monitoring.
-
-2. **Process Memory Dump (`02_process-memory-dump.sh`)**
-   - Captures memory snapshots of user-specified processes with LLDB; optionally disassembles binaries.
-   - **Output:** Process memory dumps, LLDB logs, optional disassembly reports, and NVRAM snapshots.
+4. **Keyword Search**  
+   Looks through text files for any suspicious terms and shows you where they popped up.
 
 ---
 
-### Phase 3: Post-Incident Static Analysis
+## ⚡ Phase 1: Live System Snapshot
 
-1. **Browser History (`01_browser-history.sh`)**
-   - Collects browser history databases from Chrome, Edge, Brave, Island, Firefox, and Safari with metadata.
-   - **Output:** Detailed browser histories, including metadata and WAL/SHM files, archived for forensic analysis.
+1. **System Overview**  
+   Captures everything from SIP status, cron jobs, persistence mechanisms, to active processes and system usage.
 
-2. **Binary Inspection (`02_binary-inspection.sh`)**
-   - Performs static analysis on Mach-O binaries, extracting SHA256, file information, codesign details, and more using tools like `otool`, `nm`, and `strings`.
-   - **Output:** Analysis reports with SHA256 hashes, file characteristics, codesigning information, and binary structure details.
+2. **Network Snapshot**  
+   Takes a snapshot of the current network setup — no traffic capture, just configs, routes, and ports.
 
----
-
-## Quick Start
-
-**Note:** Some scripts require System Integrity Protection (SIP) to be disabled. You'll be prompted when necessary.
-
-To download, visit: [MEOW Forensics Toolkit Releases](https://github.com/simon-im-security/MEOW-Forensics-Toolkit/releases/tag/main)
-
-All scripts must run with root privileges.
+3. **CPU Dump**  
+   Pulls detailed CPU stats (but skips thermal sensors to avoid crashes).
 
 ---
 
-## Contributions
+## 🕵️‍♂️ Phase 2: Runtime Monitoring
 
-Contributions, issue reports, and enhancements are welcomed. Please submit pull requests or issues directly on GitHub.
+1. **Process Tracker**  
+   Watches and logs all process activity live — successful and failed launches.
+
+2. **Process Memory Dump**  
+   Captures memory from processes you specify, optionally disassembles the binary too.
+
+---
+
+## 🧪 Phase 3: Post-Incident Analysis
+
+1. **Browser History**  
+   Extracts browsing history and metadata from all common macOS browsers.
+
+2. **Binary Inspection**  
+   Analyses binaries using tools like `file`, `otool`, `strings`, and `codesign`. Tells you what a file is really made of.
 
 ---
 
-## License
+## 🚀 Getting Started
 
-Licensed under the MIT License.
+Some scripts need **System Integrity Protection (SIP)** to be turned off — you’ll get a warning if that’s the case.
+
+Make sure to run all scripts as **root** (`sudo`).
+
+**Download the toolkit:**  
+👉 [MEOW Toolkit Releases](https://github.com/simon-im-security/MEOW-Forensics-Toolkit/releases/tag/main)
 
 ---
+
+## 🛠 Contribute
+
+Got a feature idea or found a bug?  
+Open an issue or submit a pull request — all help is welcome!
+
+---
+
+## 📄 Licence
+
+This toolkit is released under the **MIT Licence**. Feel free to use, modify, and share it.
