@@ -95,5 +95,3 @@ Contributions, issue reports, and enhancements are welcomed. Please submit pull 
 Licensed under the MIT License. See `LICENSE` for more details.
 
 ---
-
-🐱 **Stay curious and forensic!** 🐱
