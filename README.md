@@ -4,7 +4,7 @@
   <img src="https://github.com/simon-im-security/MEOW-Forensics-Toolkit/blob/main/Images/meow_ft_logo.png?raw=true" width="50%" />
 </div>
 
-**Mystery Event Origin Workflow (MEOW)** is a set of forensic scripts designed for macOS systems to facilitate detailed system analysis, event tracing, and forensic data capture. The toolkit assists in uncovering and understanding mysterious or suspicious events occurring within macOS environments.
+**Mystery Event Origin Workflow (MEOW)** is a set of digital forensics and incident response (DFIR) scripts designed for macOS systems to facilitate detailed system analysis, event tracing, and forensic data capture. The toolkit assists in uncovering and understanding mysterious or suspicious events occurring within macOS environments.
 
 ```
  /\_/\  
