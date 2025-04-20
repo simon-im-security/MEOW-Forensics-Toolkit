@@ -92,6 +92,6 @@ Contributions, issue reports, and enhancements are welcomed. Please submit pull 
 
 ## License
 
-Licensed under the MIT License. See `LICENSE` for more details.
+Licensed under the MIT License.
 
 ---
